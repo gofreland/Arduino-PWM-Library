@@ -1,7 +1,9 @@
 /*
- *  PWM library for 8 bit Timer2 on ATmega168/328
+ *  PWM4all 1.1
+ *  A library to Pulse-Width Modulation on any ATmega168/328 pinout
  *  Gofreeland
- *  2013 Granada, Spain
+ *  www.gofreeland.org
+ *  2014 Granada, Spain
  * 
  *  This is free software. You can redistribute it and/or modify it under
  *  the terms of Creative Commons Attribution 3.0 United States License. 
@@ -12,14 +14,16 @@
 
 #include "Arduino.h"
 
-#ifndef PWM_h
-#define PWM_h
+#ifndef PWM4all_h
+#define PWM4all_h
 
-class PWM {
+class PWM4all {
 
   public:
     
-    PWM(byte pin);
+    PWM4all(void);
+    ~PWM4all(void);
+    void pinout(byte pin);
     void begin();
     void write(byte pin, byte value);
     void (*isrCallback)();
